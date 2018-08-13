@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4KB-Wg-CLQ">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="AccountViewController" customModule="free_throw_pro_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -24,73 +24,65 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1594" y="-19"/>
+            <point key="canvasLocation" x="2535.1999999999998" y="-19.211822660098523"/>
         </scene>
         <!--Progress-->
         <scene sceneID="Hg5-aW-HPt">
             <objects>
                 <viewController id="FGn-nF-ziJ" customClass="ProgressViewController" customModule="free_throw_pro_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tqn-0v-BSo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="vdq-Kr-wFS">
-                                <rect key="frame" x="0.0" y="28" width="375" height="598"/>
-                                <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8ST-1d-ceK" userLabel="Segmented Control">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
-                                        <segments>
-                                            <segment title="Day"/>
-                                            <segment title="Week"/>
-                                            <segment title="2 Weeks"/>
-                                            <segment title="Month"/>
-                                        </segments>
-                                    </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8O-rk-0st">
-                                        <rect key="frame" x="0.0" y="75" width="375" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nb1-HH-U3A" customClass="BarChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="142.5" width="375" height="329.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bRq-mu-Ld0">
-                                        <rect key="frame" x="0.0" y="519" width="375" height="79"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </tableView>
-                                </subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8ST-1d-ceK" userLabel="Segmented Control">
+                                <rect key="frame" x="8" y="104" width="359" height="29"/>
+                                <segments>
+                                    <segment title="Day"/>
+                                    <segment title="Week"/>
+                                    <segment title="Month"/>
+                                    <segment title="Year"/>
+                                </segments>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nb1-HH-U3A" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="8" y="164" width="359" height="392"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="b8O-rk-0st" firstAttribute="centerX" secondItem="vdq-Kr-wFS" secondAttribute="centerX" id="13a-bR-fk7"/>
-                                    <constraint firstAttribute="bottom" secondItem="Nb1-HH-U3A" secondAttribute="bottom" constant="126" id="lFx-yp-udN"/>
+                                    <constraint firstAttribute="height" constant="392" id="E0q-RZ-Twp"/>
+                                    <constraint firstAttribute="width" constant="359" id="Y4K-ZT-zOJ"/>
                                 </constraints>
-                            </stackView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vdq-Kr-wFS" firstAttribute="trailing" secondItem="ZhH-fL-fYP" secondAttribute="trailing" id="1Ll-wW-3hb"/>
-                            <constraint firstItem="vdq-Kr-wFS" firstAttribute="bottom" secondItem="ZhH-fL-fYP" secondAttribute="bottom" constant="8" id="Gga-yU-xbD"/>
-                            <constraint firstItem="vdq-Kr-wFS" firstAttribute="top" secondItem="ZhH-fL-fYP" secondAttribute="top" constant="8" id="fdc-VL-t1I"/>
-                            <constraint firstItem="vdq-Kr-wFS" firstAttribute="leading" secondItem="ZhH-fL-fYP" secondAttribute="leading" id="rlE-Jj-1bA"/>
+                            <constraint firstItem="Nb1-HH-U3A" firstAttribute="top" secondItem="8ST-1d-ceK" secondAttribute="bottom" constant="32" id="6aG-Si-i93"/>
+                            <constraint firstItem="8ST-1d-ceK" firstAttribute="top" secondItem="ZhH-fL-fYP" secondAttribute="top" constant="16" id="CqT-6z-WOX"/>
+                            <constraint firstItem="8ST-1d-ceK" firstAttribute="centerX" secondItem="tqn-0v-BSo" secondAttribute="centerX" id="R0M-tH-AQK"/>
+                            <constraint firstItem="8ST-1d-ceK" firstAttribute="trailing" secondItem="Nb1-HH-U3A" secondAttribute="trailing" id="ita-Jf-6ID"/>
+                            <constraint firstItem="8ST-1d-ceK" firstAttribute="leading" secondItem="ZhH-fL-fYP" secondAttribute="leading" constant="8" id="lSc-DX-OuF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZhH-fL-fYP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Progress" id="5Da-k2-lgm"/>
+                    <navigationItem key="navigationItem" title="Progress" id="2Fe-MD-Nri">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bgs-Vu-cbW">
+                            <connections>
+                                <action selector="addNewSession:" destination="FGn-nF-ziJ" id="CLC-hq-y3a"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="barChart" destination="Nb1-HH-U3A" id="F48-FM-voo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="raO-Jw-Ga2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919" y="71"/>
+            <point key="canvasLocation" x="1616.8" y="-276.35467980295567"/>
         </scene>
         <!--Share-->
         <scene sceneID="xuZ-Nw-gT1">
             <objects>
                 <viewController id="36e-id-H2e" customClass="ShareViewController" customModule="free_throw_pro_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iUQ-nT-bDY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rYO-L9-4he"/>
@@ -99,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5G1-8Y-CxQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1470" y="422"/>
+            <point key="canvasLocation" x="2412" y="421.92118226600985"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DoM-aY-d8f">
@@ -113,13 +105,32 @@
                     </tabBar>
                     <connections>
                         <segue destination="36e-id-H2e" kind="relationship" relationship="viewControllers" id="UPl-Ee-c2z"/>
-                        <segue destination="FGn-nF-ziJ" kind="relationship" relationship="viewControllers" id="g5g-0I-3Bm"/>
+                        <segue destination="4BZ-Ns-bvT" kind="relationship" relationship="viewControllers" id="g5g-0I-3Bm"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="296-Km-AOc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWE-1a-BUq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+        </scene>
+        <!--Progress-->
+        <scene sceneID="fX2-7i-HFt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4BZ-Ns-bvT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Progress" id="5Da-k2-lgm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="84J-5K-L4S">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FGn-nF-ziJ" kind="relationship" relationship="rootViewController" id="ID9-EZ-2Kl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K3B-Jq-WjW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900" y="-276"/>
         </scene>
     </scenes>
 </document>
