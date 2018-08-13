@@ -19,6 +19,22 @@ class ProgressViewController: UIViewController {
     
     var numberOfDownloadsDataEntries = [BarChartDataEntry]()
     
+    override func loadView() {
+        super.loadView()
+        
+//        let segmentedControl = UISegmentedControl(items: ["Day", "Week", "Month", "Year"])
+//        segmentedControl.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+//        segmentedControl.selectedSegmentIndex = 0
+//        
+//        let topConstraint = segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8)
+//        let leadingConstraint = segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+//        let trailingConstraint = segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+//        
+//        topConstraint.isActive = true
+//        leadingConstraint.isActive = true
+//        trailingConstraint.isActive = true
+//    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

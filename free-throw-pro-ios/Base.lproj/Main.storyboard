@@ -34,34 +34,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vdq-Kr-wFS">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="vdq-Kr-wFS">
                                 <rect key="frame" x="0.0" y="28" width="375" height="598"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BVO-H3-pxH">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="29.5"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8ST-1d-ceK" userLabel="Segmented Control">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
                                         <segments>
-                                            <segment title="First"/>
-                                            <segment title="Second"/>
+                                            <segment title="Day"/>
+                                            <segment title="Week"/>
+                                            <segment title="2 Weeks"/>
+                                            <segment title="Month"/>
                                         </segments>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8O-rk-0st">
-                                        <rect key="frame" x="0.0" y="28.5" width="375" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="75" width="375" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nb1-HH-U3A" customClass="BarChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="49" width="375" height="422"/>
+                                        <rect key="frame" x="0.0" y="142.5" width="375" height="329.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bRq-mu-Ld0">
-                                        <rect key="frame" x="0.0" y="471" width="375" height="127"/>
+                                        <rect key="frame" x="0.0" y="519" width="375" height="79"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Nb1-HH-U3A" firstAttribute="centerX" secondItem="vdq-Kr-wFS" secondAttribute="centerX" id="byN-5W-TMs"/>
-                                    <constraint firstAttribute="bottom" secondItem="Nb1-HH-U3A" secondAttribute="bottom" constant="127" id="cdQ-dm-mU5"/>
+                                    <constraint firstItem="b8O-rk-0st" firstAttribute="centerX" secondItem="vdq-Kr-wFS" secondAttribute="centerX" id="13a-bR-fk7"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nb1-HH-U3A" secondAttribute="bottom" constant="126" id="lFx-yp-udN"/>
                                 </constraints>
                             </stackView>
                         </subviews>
