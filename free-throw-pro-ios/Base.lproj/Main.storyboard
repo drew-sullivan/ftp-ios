@@ -37,13 +37,32 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vdq-Kr-wFS">
                                 <rect key="frame" x="0.0" y="28" width="375" height="598"/>
                                 <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BVO-H3-pxH">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="29.5"/>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                    </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8O-rk-0st">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
+                                        <rect key="frame" x="0.0" y="28.5" width="375" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nb1-HH-U3A" customClass="BarChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="49" width="375" height="422"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bRq-mu-Ld0">
+                                        <rect key="frame" x="0.0" y="471" width="375" height="127"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Nb1-HH-U3A" firstAttribute="centerX" secondItem="vdq-Kr-wFS" secondAttribute="centerX" id="byN-5W-TMs"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nb1-HH-U3A" secondAttribute="bottom" constant="127" id="cdQ-dm-mU5"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -56,6 +75,9 @@
                         <viewLayoutGuide key="safeArea" id="ZhH-fL-fYP"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Progress" id="5Da-k2-lgm"/>
+                    <connections>
+                        <outlet property="barChart" destination="Nb1-HH-U3A" id="F48-FM-voo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="raO-Jw-Ga2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,6 +105,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4KB-Wg-CLQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IIP-rE-cIL">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

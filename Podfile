@@ -7,14 +7,5 @@ target 'free-throw-pro-ios' do
 
   # Pods for free-throw-pro-ios
 
-  target 'free-throw-pro-iosTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'free-throw-pro-iosUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+  pod 'Charts'
 end

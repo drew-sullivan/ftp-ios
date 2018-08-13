@@ -1,0 +1,6 @@
+framework module Pods_free_throw_pro_ios {
+  umbrella header "Pods-free-throw-pro-ios-umbrella.h"
+
+  export *
+  module * { export * }
+}
