@@ -11,12 +11,12 @@ import UIKit
 class Session: NSObject {
     var id: UUID
     var date: Date
-    var outOf10: Int
+    var numShotsMade: Int
 
-    init(date: Date, outOf10: Int) {
+    init(date: Date, numShotsMade: Int) {
         self.id = UUID()
         self.date = date
-        self.outOf10 = outOf10
+        self.numShotsMade = numShotsMade
         
         super.init()
     }
@@ -24,9 +24,9 @@ class Session: NSObject {
     convenience init(random: Bool = false) {
         if random {
             let randInt = Int(arc4random_uniform(10))
-            self.init(date: Date(), outOf10: randInt)
+            self.init(date: Date(), numShotsMade: randInt)
         } else {
-            self.init(date: Date(), outOf10: 8)
+            self.init(date: Date(), numShotsMade: 8)
         }
     }
 }
