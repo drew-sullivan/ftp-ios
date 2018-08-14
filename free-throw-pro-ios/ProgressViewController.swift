@@ -38,13 +38,12 @@ class ProgressViewController: UIViewController {
     func barChartUpdate() {
         var values = [BarChartDataEntry]()
         for i in 1..<30 {
-            values.append(BarChartDataEntry(x: Double(i), y: Double(i) * 2.0))
+            values.append(BarChartDataEntry(x: Double(i), y: Double(i) * 1.22))
         }
         
-        let dataSet = BarChartDataSet(values: values, label: "Widgets Type")
+        let dataSet = BarChartDataSet(values: values, label: "")
         let data = BarChartData(dataSets: [dataSet])
         barChart.data = data
-        barChart.legend.textColor = UIColor.red
         barChart.legend.formSize = 0
         
         barChart.notifyDataSetChanged()
