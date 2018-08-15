@@ -8,23 +8,19 @@
 
 import Foundation
 
-class Utility {
+class ObjectFormatter {
     
-    let df: DateFormatter() = {
+    static func formatDate(from date: Date) -> String {
+        let df = DateFormatter()
         df.dateStyle = .long
         df.timeStyle = .none
-    }
-    
-    
-    let tf = DateFormatter()
-    tf.dateStyle = .none
-    tf.timeStyle = .medium
-    
-    func formatDate(date: Date) -> String {
         return df.string(from: date)
     }
     
-    func formatTime(date: Date) -> String {
+    static func formatTime(from date: Date) -> String {
+        let tf = DateFormatter()
+        tf.dateStyle = .none
+        tf.timeStyle = .medium
         return tf.string(from: date)
     }
 }

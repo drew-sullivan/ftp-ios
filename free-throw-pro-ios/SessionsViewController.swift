@@ -12,20 +12,6 @@ class SessionsViewController: UITableViewController {
     
     var sessionsStore: SessionStore!
     
-    let dateFormatter: DateFormatter = {
-        let df = DateFormatter()
-        df.dateStyle = .long
-        df.timeStyle = .none
-        return df
-    }()
-    
-    let timeFormatter: DateFormatter = {
-        let tf = DateFormatter()
-        tf.dateStyle = .none
-        tf.timeStyle = .medium
-        return tf
-    }()
-    
     // MARK: - Button Actions
     @IBAction func addNewItem(_ sender: UIButton) {
         let newSession = sessionsStore.createSession()
@@ -58,9 +44,8 @@ class SessionsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SessionCell", for: indexPath) as! SessionCell
         let session = sessionsStore.allSessions[indexPath.row]
         
-        cell.dateLabel.text = dateFormatter.string(from: session.date)
-        cell.dateLabel.text = Utility.formatDate(date: session.date)
-        cell.timeLabel.text = timeFormatter.string(from: session.date)
+        cell.dateLabel.text = ObjectFormatter.formatDate(from: session.date)
+        cell.timeLabel.text = ObjectFormatter.formatTime(from: session.date)
         cell.numShotsMadeLabel.text = String(session.numShotsMade)
         
         return cell
