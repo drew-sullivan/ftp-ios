@@ -20,6 +20,7 @@ class SessionDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        //TODO: session is nil for whatever reason now...
 //        dateField.text = "\(session.date)"
 //        timeField.text = "\(session.date)"
 //        numberField.text = "\(session.numShotsMade)"
