@@ -59,6 +59,7 @@ class SessionsViewController: UITableViewController {
         let session = sessionsStore.allSessions[indexPath.row]
         
         cell.dateLabel.text = dateFormatter.string(from: session.date)
+        cell.dateLabel.text = Utility.formatDate(date: session.date)
         cell.timeLabel.text = timeFormatter.string(from: session.date)
         cell.numShotsMadeLabel.text = String(session.numShotsMade)
         
