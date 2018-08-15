@@ -20,8 +20,8 @@ class SessionDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        dateField.text = "\(session.date)"
-        timeField.text = "\(session.date)"
-        numberField.text = "\(session.numShotsMade)"
+//        dateField.text = "\(session.date)"
+//        timeField.text = "\(session.date)"
+//        numberField.text = "\(session.numShotsMade)"
     }
 }

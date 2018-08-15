@@ -199,7 +199,7 @@
                                     <outlet property="dateLabel" destination="QG4-6L-bCx" id="y5m-ew-cPl"/>
                                     <outlet property="numShotsMadeLabel" destination="EFH-g0-uUH" id="ids-Ad-tqK"/>
                                     <outlet property="timeLabel" destination="dyQ-cy-rX1" id="lYy-i6-7kJ"/>
-                                    <segue destination="RaI-He-gPL" kind="show" id="JBG-FT-pOy"/>
+                                    <segue destination="RaI-He-gPL" kind="show" id="IeB-Oi-KM8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -298,9 +298,9 @@
                         <viewLayoutGuide key="safeArea" id="TLl-LS-4ez"/>
                     </view>
                     <connections>
-                        <outlet property="dateField" destination="ksX-7g-aB6" id="R6s-IK-6wf"/>
-                        <outlet property="numberField" destination="QuH-wZ-Atb" id="CRB-MP-qov"/>
-                        <outlet property="timeField" destination="HMn-8M-7yr" id="vto-Gz-G9b"/>
+                        <outlet property="dateField" destination="ksX-7g-aB6" id="Ub2-0c-cBD"/>
+                        <outlet property="numberField" destination="QuH-wZ-Atb" id="0yX-R0-5Dk"/>
+                        <outlet property="timeField" destination="HMn-8M-7yr" id="GnX-UU-p39"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJJ-Cz-Rii" userLabel="First Responder" sceneMemberID="firstResponder"/>
