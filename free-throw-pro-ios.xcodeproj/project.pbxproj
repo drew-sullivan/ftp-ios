@@ -124,21 +124,21 @@
 		7CF56E382121DF6700115894 /* free-throw-pro-ios */ = {
 			isa = PBXGroup;
 			children = (
+				7CF56E452121DF6800115894 /* Info.plist */,
+				7CF56E692121E0C400115894 /* AccountViewController.swift */,
 				7CF56E392121DF6700115894 /* AppDelegate.swift */,
-				7CF56E3D2121DF6700115894 /* Main.storyboard */,
-				7C07BAB321247F1F001EEFAD /* SessionDetailViewController.swift */,
+				3AC747A721225031001E674A /* NewSessionController.swift */,
+				7C07BAB521248165001EEFAD /* ObjectFormatter.swift */,
+				7CF56E672121E0A800115894 /* ProgressViewController.swift */,
 				3AC747AB21226FEF001E674A /* Session.swift */,
+				7CBE6A2C212374090066E282 /* SessionCell.swift */,
+				7C07BAB321247F1F001EEFAD /* SessionDetailViewController.swift */,
 				3AC747AD21227296001E674A /* SessionStore.swift */,
 				3AC747A921226F27001E674A /* SessionsViewController.swift */,
-				7C07BAB521248165001EEFAD /* ObjectFormatter.swift */,
-				7CBE6A2C212374090066E282 /* SessionCell.swift */,
-				3AC747A721225031001E674A /* NewSessionController.swift */,
 				7CF56E6B2121E0E500115894 /* ShareViewController.swift */,
-				7CF56E692121E0C400115894 /* AccountViewController.swift */,
-				7CF56E672121E0A800115894 /* ProgressViewController.swift */,
 				7CF56E402121DF6800115894 /* Assets.xcassets */,
 				7CF56E422121DF6800115894 /* LaunchScreen.storyboard */,
-				7CF56E452121DF6800115894 /* Info.plist */,
+				7CF56E3D2121DF6700115894 /* Main.storyboard */,
 			);
 			path = "free-throw-pro-ios";
 			sourceTree = "<group>";

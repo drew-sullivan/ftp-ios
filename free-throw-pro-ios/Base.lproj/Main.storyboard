@@ -199,7 +199,7 @@
                                     <outlet property="dateLabel" destination="QG4-6L-bCx" id="y5m-ew-cPl"/>
                                     <outlet property="numShotsMadeLabel" destination="EFH-g0-uUH" id="ids-Ad-tqK"/>
                                     <outlet property="timeLabel" destination="dyQ-cy-rX1" id="lYy-i6-7kJ"/>
-                                    <segue destination="RaI-He-gPL" kind="show" id="IeB-Oi-KM8"/>
+                                    <segue destination="RaI-He-gPL" kind="show" identifier="showSession" id="1fv-Cu-yx1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -216,7 +216,7 @@
         <!--Session Detail View Controller-->
         <scene sceneID="L4J-Dl-hnS">
             <objects>
-                <viewController id="RaI-He-gPL" customClass="SessionDetailViewController" customModule="free_throw_pro_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RaI-He-gPL" customClass="SessionDetailViewController" customModule="free_throw_pro_ios" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0DC-dE-vli">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

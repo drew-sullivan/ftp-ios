@@ -84,5 +84,18 @@ class SessionsViewController: UITableViewController {
         sessionsStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
     
+    //MARK: - segue to SessionDetailViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "showSession"?:
+            if let row = tableView.indexPathForSelectedRow?.row {
+                let session = sessionsStore.allSessions[row]
+                let sessionDetailViewController = segue.destination as! SessionDetailViewController
+                sessionDetailViewController.session = session
+            }
+        default:
+            preconditionFailure("Unexpected segue identifier. Expected: showSession")
+        }
+    }
     
 }

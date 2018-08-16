@@ -21,8 +21,8 @@ class SessionDetailViewController: UIViewController {
         super.viewWillAppear(animated)
         
         //TODO: session is nil for whatever reason now...
-//        dateField.text = "\(session.date)"
-//        timeField.text = "\(session.date)"
-//        numberField.text = "\(session.numShotsMade)"
+        dateField.text = ObjectFormatter.formatDate(from: session.date)
+        timeField.text = ObjectFormatter.formatTime(from: session.date)
+        numberField.text = "\(session.numShotsMade)"
     }
 }
