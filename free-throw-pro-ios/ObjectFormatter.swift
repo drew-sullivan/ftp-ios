@@ -23,4 +23,10 @@ class ObjectFormatter {
         tf.timeStyle = .medium
         return tf.string(from: date)
     }
+    
+    static func formatDate(from string: String) -> Date {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        return (df.date(from: string))!
+    }
 }

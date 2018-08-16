@@ -20,9 +20,15 @@ class SessionDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        //TODO: session is nil for whatever reason now...
         dateField.text = ObjectFormatter.formatDate(from: session.date)
         timeField.text = ObjectFormatter.formatTime(from: session.date)
         numberField.text = "\(session.numShotsMade)"
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        session.date = ObjectFormatter.formatDate(from: dateField.text ?? "")
+        session.numShotsMade = Int(numberField.text!)!
     }
 }
