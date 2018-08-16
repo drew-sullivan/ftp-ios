@@ -19,8 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let sessionStore = SessionStore()
         
-        let sessionsViewController = window!.rootViewController as! SessionsViewController
-        sessionsViewController.sessionsStore = sessionStore
+        let sessionsNavController = window!.rootViewController as! UINavigationController
+        let sessionsController = sessionsNavController.topViewController as! SessionsViewController
+        sessionsController.sessionsStore = sessionStore
         return true
     }
 
