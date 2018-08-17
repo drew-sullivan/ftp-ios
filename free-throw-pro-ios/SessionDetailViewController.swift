@@ -28,7 +28,6 @@ class SessionDetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        session.date = ObjectFormatter.formatDate(from: dateField.text ?? "")
         session.numShotsMade = Int(numberField.text!)!
     }
 }
