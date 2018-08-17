@@ -14,6 +14,10 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var dateRecorded: UILabel!
     @IBOutlet var timeRecorded: UILabel!
     
+    @IBAction func backgroundTapped(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
     var session: Session!
     
     // MARK: - lifecycle hooks

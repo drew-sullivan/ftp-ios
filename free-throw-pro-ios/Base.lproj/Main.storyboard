@@ -272,7 +272,7 @@
                                                 <rect key="frame" x="196.33333333333337" y="0.0" width="146.66666666666663" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="RaI-He-gPL" id="5rl-si-CsY"/>
                                                 </connections>
@@ -293,6 +293,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="b6h-yq-HoZ" secondAttribute="trailing" constant="16" id="MLj-nF-jFk"/>
                             <constraint firstAttribute="bottom" secondItem="b6h-yq-HoZ" secondAttribute="bottom" constant="16" id="UKJ-kj-PvP"/>
@@ -300,6 +301,9 @@
                             <constraint firstItem="b6h-yq-HoZ" firstAttribute="top" secondItem="TLl-LS-4ez" secondAttribute="top" constant="16" id="ldq-9N-uOV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TLl-LS-4ez"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="PYi-G2-k1m" appends="YES" id="hse-9L-eFY"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="dateRecorded" destination="HS8-Uz-Koq" id="u9Y-WW-4JD"/>
@@ -308,6 +312,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJJ-Cz-Rii" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="PYi-G2-k1m">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="RaI-He-gPL" id="lTh-k9-xAL"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2584.8000000000002" y="678.32512315270935"/>
         </scene>
