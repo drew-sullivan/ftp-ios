@@ -18,7 +18,11 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
-    var session: Session!
+    var session: Session! {
+        didSet {
+            navigationItem.title = "Session No. \(session.num)"
+        }
+    }
     
     // MARK: - lifecycle hooks
     override func viewWillAppear(_ animated: Bool) {
@@ -31,6 +35,9 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
+        // dismiss keyboard gracefully, if open
+        view.endEditing(true)
         
         if let numFieldText = numberField.text, let value = Int(numFieldText) {
             session.numShotsMade = value

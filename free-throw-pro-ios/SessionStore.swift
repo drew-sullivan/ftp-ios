@@ -19,8 +19,8 @@ class SessionStore {
     }
     
     @discardableResult func createSession() -> Session {
-        let newSession = Session(random: true)
-        allSessions.append(newSession)
+        let newSession = Session(random: true, num: allSessions.count + 1)
+        allSessions.insert(newSession, at: 0)
         return newSession
     }
     

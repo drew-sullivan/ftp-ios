@@ -13,4 +13,5 @@ class SessionCell: UITableViewCell {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var numShotsMadeLabel: UILabel!
+    @IBOutlet var sessionNumLabel: UILabel!
 }

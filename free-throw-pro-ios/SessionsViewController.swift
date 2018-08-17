@@ -12,8 +12,15 @@ class SessionsViewController: UITableViewController {
     
     var sessionsStore: SessionStore!
     
+    // Adding edit button in nav bar
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem
+    }
+    
     // MARK: - Button Actions
-    @IBAction func addNewItem(_ sender: UIButton) {
+    @IBAction func addNewItem(_ sender: UIBarButtonItem) {
         let newSession = sessionsStore.createSession()
         if let index = sessionsStore.allSessions.index(of: newSession) {
             let indexPath = IndexPath(row: index, section: 0)
@@ -21,19 +28,10 @@ class SessionsViewController: UITableViewController {
         }
     }
     
-    @IBAction func toggleEditingMode(_ sender: UIButton) {
-        if isEditing {
-            sender.setTitle("Edit", for: .normal)
-            setEditing(false, animated: true)
-        } else {
-            sender.setTitle("Done", for: .normal)
-            setEditing(true, animated: true)
-        }
-    }
-    
     // MARK: - lifecycle hooks
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 65
     }
@@ -50,9 +48,10 @@ class SessionsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SessionCell", for: indexPath) as! SessionCell
         let session = sessionsStore.allSessions[indexPath.row]
         
+        cell.numShotsMadeLabel.text = "\(session.num)"
         cell.dateLabel.text = ObjectFormatter.formatDate(from: session.date)
         cell.timeLabel.text = ObjectFormatter.formatTime(from: session.date)
-        cell.numShotsMadeLabel.text = String(session.numShotsMade)
+        cell.numShotsMadeLabel.text = "\(session.numShotsMade)"
         
         return cell
     }
@@ -66,7 +65,7 @@ class SessionsViewController: UITableViewController {
         if editingStyle == .delete {
             let session = sessionsStore.allSessions[indexPath.row]
             
-            let title = "Delete \(session.date) - \(session.numShotsMade)?"
+            let title = "Delete Session \(session.num)?"
             let message = "Are you sure you want to delete this session?"
             
             let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
