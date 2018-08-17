@@ -10,9 +10,9 @@ import UIKit
 
 class SessionDetailViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet var dateField: UITextField!
-    @IBOutlet var timeField: UITextField!
     @IBOutlet var numberField: UITextField!
+    @IBOutlet var dateRecorded: UILabel!
+    @IBOutlet var timeRecorded: UILabel!
     
     var session: Session!
     
@@ -20,8 +20,8 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        dateField.text = ObjectFormatter.formatDate(from: session.date)
-        timeField.text = ObjectFormatter.formatTime(from: session.date)
+        dateRecorded.text = ObjectFormatter.formatDate(from: session.date)
+        timeRecorded.text = ObjectFormatter.formatTime(from: session.date)
         numberField.text = "\(session.numShotsMade)"
     }
     
