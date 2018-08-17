@@ -273,6 +273,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="RaI-He-gPL" id="5rl-si-CsY"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>

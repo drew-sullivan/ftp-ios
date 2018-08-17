@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SessionDetailViewController: UIViewController {
+class SessionDetailViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var dateField: UITextField!
     @IBOutlet var timeField: UITextField!
@@ -28,6 +28,16 @@ class SessionDetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        session.numShotsMade = Int(numberField.text!)!
+        if let numFieldText = numberField.text, let value = Int(numFieldText) {
+            session.numShotsMade = value
+        } else {
+            session.numShotsMade = 0
+        }
+    }
+    
+    // MARK: - dismiss keyboard when pressing return key
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
