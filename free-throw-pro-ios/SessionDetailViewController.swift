@@ -13,6 +13,7 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var numberField: UITextField!
     @IBOutlet var dateRecorded: UILabel!
     @IBOutlet var timeRecorded: UILabel!
+    @IBOutlet var imageView: UIImageView!
     
     @IBAction func backgroundTapped(_ sender: Any) {
         view.endEditing(true)

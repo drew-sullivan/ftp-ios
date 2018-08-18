@@ -266,12 +266,9 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Placeholder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXG-pl-hyX">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="MRj-pn-8dO">
                                         <rect key="frame" x="0.0" y="94.666666666666686" width="343" height="597.33333333333326"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="QuH-wZ-Atb" firstAttribute="leading" secondItem="CTx-Sx-3oV" secondAttribute="leading" id="7Td-Or-alK"/>
@@ -294,6 +291,7 @@
                     </view>
                     <connections>
                         <outlet property="dateRecorded" destination="HS8-Uz-Koq" id="u9Y-WW-4JD"/>
+                        <outlet property="imageView" destination="MRj-pn-8dO" id="rJ1-6W-ly7"/>
                         <outlet property="numberField" destination="QuH-wZ-Atb" id="0yX-R0-5Dk"/>
                         <outlet property="timeRecorded" destination="CTx-Sx-3oV" id="nmo-Ev-8KE"/>
                     </connections>
