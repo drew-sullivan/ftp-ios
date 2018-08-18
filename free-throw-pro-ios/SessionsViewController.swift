@@ -48,7 +48,7 @@ class SessionsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SessionCell", for: indexPath) as! SessionCell
         let session = sessionsStore.allSessions[indexPath.row]
         
-        cell.numShotsMadeLabel.text = "\(session.num)"
+        cell.sessionNumLabel.text = "\(session.num)"
         cell.dateLabel.text = ObjectFormatter.formatDate(from: session.date)
         cell.timeLabel.text = ObjectFormatter.formatTime(from: session.date)
         cell.numShotsMadeLabel.text = "\(session.numShotsMade)"
