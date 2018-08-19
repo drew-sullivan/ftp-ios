@@ -210,7 +210,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b6h-yq-HoZ">
-                                <rect key="frame" x="16" y="104" width="343" height="692"/>
+                                <rect key="frame" x="16" y="104" width="343" height="622"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="kZb-L3-4FA">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.333333333333332"/>
@@ -267,7 +267,7 @@
                                         </subviews>
                                     </stackView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="MRj-pn-8dO">
-                                        <rect key="frame" x="0.0" y="94.666666666666686" width="343" height="597.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="94.666666666666686" width="343" height="527.33333333333326"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -275,13 +275,29 @@
                                     <constraint firstItem="CTx-Sx-3oV" firstAttribute="leading" secondItem="HS8-Uz-Koq" secondAttribute="leading" id="ag7-zd-PM4"/>
                                 </constraints>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kuU-Cb-G81">
+                                <rect key="frame" x="0.0" y="734" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="WF1-Lv-BSF"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="7oI-pg-pPz">
+                                        <connections>
+                                            <action selector="takePicture:" destination="RaI-He-gPL" id="wMv-fJ-O4G"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="kuU-Cb-G81" firstAttribute="top" secondItem="b6h-yq-HoZ" secondAttribute="bottom" constant="8" id="3Uz-gB-xEd"/>
+                            <constraint firstItem="kuU-Cb-G81" firstAttribute="trailing" secondItem="TLl-LS-4ez" secondAttribute="trailing" id="5ot-qN-yRJ"/>
+                            <constraint firstItem="kuU-Cb-G81" firstAttribute="leading" secondItem="TLl-LS-4ez" secondAttribute="leading" id="Ewr-xa-dmm"/>
                             <constraint firstAttribute="trailing" secondItem="b6h-yq-HoZ" secondAttribute="trailing" constant="16" id="MLj-nF-jFk"/>
-                            <constraint firstAttribute="bottom" secondItem="b6h-yq-HoZ" secondAttribute="bottom" constant="16" id="UKJ-kj-PvP"/>
                             <constraint firstItem="b6h-yq-HoZ" firstAttribute="leading" secondItem="TLl-LS-4ez" secondAttribute="leading" constant="16" id="kIo-od-PBG"/>
+                            <constraint firstItem="TLl-LS-4ez" firstAttribute="bottom" secondItem="kuU-Cb-G81" secondAttribute="bottom" id="kMM-2l-CjH"/>
                             <constraint firstItem="b6h-yq-HoZ" firstAttribute="top" secondItem="TLl-LS-4ez" secondAttribute="top" constant="16" id="ldq-9N-uOV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TLl-LS-4ez"/>
