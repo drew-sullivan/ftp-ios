@@ -39,6 +39,8 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate, UINavi
         }
     }
     
+    var mediaStore: MediaStore!
+    
     // MARK: - lifecycle hooks
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

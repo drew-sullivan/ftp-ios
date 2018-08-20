@@ -11,6 +11,7 @@ import UIKit
 class SessionsViewController: UITableViewController {
     
     var sessionsStore: SessionStore!
+    var mediaStore: MediaStore!
     
     // Adding edit button in nav bar
     required init?(coder aDecoder: NSCoder) {
@@ -97,6 +98,7 @@ class SessionsViewController: UITableViewController {
                 let session = sessionsStore.allSessions[row]
                 let sessionDetailViewController = segue.destination as! SessionDetailViewController
                 sessionDetailViewController.session = session
+                sessionDetailViewController.mediaStore = mediaStore
             }
         default:
             preconditionFailure("Unexpected segue identifier. Expected: showSession")

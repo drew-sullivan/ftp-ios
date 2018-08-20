@@ -18,10 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let sessionStore = SessionStore()
+        let mediaStore = MediaStore()
         
         let sessionsNavController = window!.rootViewController as! UINavigationController
         let sessionsController = sessionsNavController.topViewController as! SessionsViewController
         sessionsController.sessionsStore = sessionStore
+        sessionsController.mediaStore = mediaStore
         return true
     }
 
