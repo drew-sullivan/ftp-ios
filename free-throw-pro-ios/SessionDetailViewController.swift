@@ -16,17 +16,19 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate, UINavi
     @IBOutlet var imageView: UIImageView!
     
     @IBAction func takePicture(_ sender: UIBarButtonItem) {
-        let imagePicker = UIImagePickerController()
+        MediaHelper.startMediaBrowser(delegate: self, sourceType: .camera)
         
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            imagePicker.sourceType = .camera
-        } else {
-            imagePicker.sourceType = .photoLibrary
-        }
-        
-        imagePicker.delegate = self
-        
-        present(imagePicker, animated: true, completion: nil)
+//        let imagePicker = UIImagePickerController()
+//
+//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+//            imagePicker.sourceType = .camera
+//        } else {
+//            imagePicker.sourceType = .photoLibrary
+//        }
+//
+//        imagePicker.delegate = self
+//
+//        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func backgroundTapped(_ sender: Any) {
