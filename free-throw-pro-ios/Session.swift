@@ -9,13 +9,13 @@
 import UIKit
 
 class Session: NSObject {
-    var key: UUID
+    var key: String
     var num: Int
     var date: Date
     var numShotsMade: Int
 
     init(num: Int, date: Date, numShotsMade: Int) {
-        self.key = UUID()
+        self.key = UUID().uuidString
         self.num = num
         self.date = date
         self.numShotsMade = numShotsMade

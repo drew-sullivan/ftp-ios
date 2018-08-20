@@ -48,6 +48,10 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate, UINavi
         dateRecorded.text = ObjectFormatter.formatDate(from: session.date)
         timeRecorded.text = ObjectFormatter.formatTime(from: session.date)
         numberField.text = "\(session.numShotsMade)"
+        
+        let key = session.key
+        let imageToDisplay = mediaStore.image(forKey: key)
+        imageView.image = imageToDisplay
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -72,6 +76,7 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate, UINavi
     // MARK: - UIImagePickerControllerDelegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        mediaStore.setImage(image, forKey: session.key)
         imageView.image = image
         dismiss(animated: true, completion: nil)
     }
