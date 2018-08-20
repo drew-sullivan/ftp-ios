@@ -286,6 +286,11 @@
                                             <action selector="takePicture:" destination="RaI-He-gPL" id="wMv-fJ-O4G"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem systemItem="play" id="5UW-lU-ddm">
+                                        <connections>
+                                            <action selector="playVideo:" destination="RaI-He-gPL" id="5pQ-9c-Rhk"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>

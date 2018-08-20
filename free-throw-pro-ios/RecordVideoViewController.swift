@@ -9,7 +9,7 @@
 import UIKit
 import MobileCoreServices
 
-class RecordVideoViewController: UIViewController {
+class RecordVideoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBAction func record(_ sender: AnyObject) {
         MediaHelper.startMediaBrowser(delegate: self, sourceType: .camera)
@@ -25,9 +25,6 @@ class RecordVideoViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-}
-
-extension RecordVideoViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard
             let mediaType = info[UIImagePickerControllerMediaType] as? String,
@@ -40,8 +37,5 @@ extension RecordVideoViewController: UIImagePickerControllerDelegate {
         
         UISaveVideoAtPathToSavedPhotosAlbum(url.path, self, #selector(video(_:didFinishSavingWithError:contextInfo:)), nil)
     }
-}
-
-extension RecordVideoViewController: UINavigationControllerDelegate {
-
+    
 }
