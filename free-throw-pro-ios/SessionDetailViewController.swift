@@ -90,9 +90,7 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate, UINavi
             let player = AVPlayer(url: url)
             let vcPlayer = AVPlayerViewController()
             vcPlayer.player = player
-            self.present(vcPlayer, animated: true, completion: {
-                print("now")
-            })
+            self.present(vcPlayer, animated: true, completion: nil)
         })
 
         UISaveVideoAtPathToSavedPhotosAlbum(url.path, self, #selector(video(_:didFinishSavingWithError:contextInfo:)), nil)
