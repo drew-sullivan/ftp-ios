@@ -17,12 +17,16 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate, UINavi
     @IBOutlet var timeRecorded: UILabel!
     @IBOutlet var imageView: UIImageView!
     
-    @IBAction func record(_ sender: UIBarButtonItem) {
+    @IBAction func recordVideo(_ sender: UIBarButtonItem) {
         MediaHelper.startMediaBrowser(delegate: self, sourceType: .camera)
     }
     
-    @IBAction func playVideo(_ sender: UIBarButtonItem) {
-        MediaHelper.startMediaBrowser(delegate: self, sourceType: .savedPhotosAlbum)
+    @IBAction func playVideo(_ sender: UIButton) {
+        let video = mediaStore.video(forKey: session.key)
+        let player = AVPlayer(url: video!.url)
+        let vcPlayer = AVPlayerViewController()
+        vcPlayer.player = player
+        self.present(vcPlayer, animated: true, completion: nil)
     }
     
     @IBAction func backgroundTapped(_ sender: Any) {
@@ -46,8 +50,8 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate, UINavi
         numberField.text = "\(session.numShotsMade)"
         
         let key = session.key
-        let imageToDisplay = mediaStore.image(forKey: key)
-        imageView.image = imageToDisplay
+        let videoSnapshotToDisplay = mediaStore.video(forKey: key)
+        imageView.image = videoSnapshotToDisplay?.snapshot
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -83,16 +87,14 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate, UINavi
         
         let videoSnapshot = getVideoSnapshot(fromVideoLocation: url)
         
-        mediaStore.setImage(videoSnapshot!, forKey: session.key)
+        mediaStore.setVideo(by: videoSnapshot!, url: url, forKey: session.key)
         imageView.image = videoSnapshot
     
         dismiss(animated: true, completion: {
             let player = AVPlayer(url: url)
             let vcPlayer = AVPlayerViewController()
             vcPlayer.player = player
-            self.present(vcPlayer, animated: true, completion: {
-                print("now")
-            })
+            self.present(vcPlayer, animated: true, completion: nil)
         })
 
         UISaveVideoAtPathToSavedPhotosAlbum(url.path, self, #selector(video(_:didFinishSavingWithError:contextInfo:)), nil)
@@ -104,7 +106,7 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate, UINavi
         let generator = AVAssetImageGenerator(asset: asset)
         generator.appliesPreferredTrackTransform = true
         
-        let timestamp = CMTime(seconds: 1.0, preferredTimescale: 60)
+        let timestamp = CMTime(seconds: 0, preferredTimescale: 60)
         
         do {
             let imageRef = try generator.copyCGImage(at: timestamp, actualTime: nil)

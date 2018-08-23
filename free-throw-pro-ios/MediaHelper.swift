@@ -13,10 +13,14 @@ import AVFoundation
 class MediaHelper {
     
     static func startMediaBrowser(delegate: UIViewController & UINavigationControllerDelegate & UIImagePickerControllerDelegate, sourceType: UIImagePickerControllerSourceType) {
-        guard UIImagePickerController.isSourceTypeAvailable(sourceType) else { return }
         
         let mediaUI = UIImagePickerController()
-        mediaUI.sourceType = sourceType
+        
+        if UIImagePickerController.isSourceTypeAvailable(sourceType) {
+            mediaUI.sourceType = sourceType
+        } else {
+            mediaUI.sourceType = .photoLibrary
+        }
         mediaUI.mediaTypes = [kUTTypeMovie as String]
         mediaUI.allowsEditing = true
         mediaUI.delegate = delegate

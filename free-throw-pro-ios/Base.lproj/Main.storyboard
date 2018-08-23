@@ -289,16 +289,22 @@
                                 <items>
                                     <barButtonItem systemItem="camera" id="7oI-pg-pPz">
                                         <connections>
-                                            <action selector="record:" destination="RaI-He-gPL" id="wMv-fJ-O4G"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem systemItem="bookmarks" id="5UW-lU-ddm" userLabel="Library">
-                                        <connections>
-                                            <action selector="playVideo:" destination="RaI-He-gPL" id="5pQ-9c-Rhk"/>
+                                            <action selector="recordVideo:" destination="RaI-He-gPL" id="wMv-fJ-O4G"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJt-G9-lYl">
+                                <rect key="frame" x="171" y="449" width="37" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playVideo:" destination="RaI-He-gPL" eventType="touchUpInside" id="z9O-v1-iJ4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>

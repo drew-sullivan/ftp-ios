@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A99E0BB212E4BCF004CAD46 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A99E0BA212E4BCF004CAD46 /* Video.swift */; };
 		3AC747A821225031001E674A /* NewSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC747A721225031001E674A /* NewSessionController.swift */; };
 		3AC747AA21226F27001E674A /* SessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC747A921226F27001E674A /* SessionsViewController.swift */; };
 		3AC747AC21226FEF001E674A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC747AB21226FEF001E674A /* Session.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		10FB29A02CE93BE0B6C1535C /* Pods_free_throw_pro_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_free_throw_pro_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12EB70E18F809635E81BB72C /* Pods_free_throw_pro_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_free_throw_pro_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A99E0BA212E4BCF004CAD46 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		3AC747A721225031001E674A /* NewSessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSessionController.swift; sourceTree = "<group>"; };
 		3AC747A921226F27001E674A /* SessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsViewController.swift; sourceTree = "<group>"; };
 		3AC747AB21226FEF001E674A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				7CF56E392121DF6700115894 /* AppDelegate.swift */,
 				7C07BABD212B1DE6001EEFAD /* MediaHelper.swift */,
 				7C07BAB9212B170B001EEFAD /* MediaStore.swift */,
+				3A99E0BA212E4BCF004CAD46 /* Video.swift */,
 				3AC747A721225031001E674A /* NewSessionController.swift */,
 				7C07BAB521248165001EEFAD /* ObjectFormatter.swift */,
 				7CF56E672121E0A800115894 /* ProgressViewController.swift */,
@@ -363,6 +366,7 @@
 				3AC747A821225031001E674A /* NewSessionController.swift in Sources */,
 				3AC747AA21226F27001E674A /* SessionsViewController.swift in Sources */,
 				7C07BAB621248165001EEFAD /* ObjectFormatter.swift in Sources */,
+				3A99E0BB212E4BCF004CAD46 /* Video.swift in Sources */,
 				3AC747AC21226FEF001E674A /* Session.swift in Sources */,
 				3AC747AE21227296001E674A /* SessionStore.swift in Sources */,
 				7CBE6A2D212374090066E282 /* SessionCell.swift in Sources */,
