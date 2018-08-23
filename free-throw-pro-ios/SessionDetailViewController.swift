@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVKit
+import MobileCoreServices
 
 class SessionDetailViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -15,18 +17,16 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate, UINavi
     @IBOutlet var timeRecorded: UILabel!
     @IBOutlet var imageView: UIImageView!
     
-    @IBAction func takePicture(_ sender: UIBarButtonItem) {
-        let imagePicker = UIImagePickerController()
-        
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            imagePicker.sourceType = .camera
-        } else {
-            imagePicker.sourceType = .photoLibrary
-        }
-        
-        imagePicker.delegate = self
-        
-        present(imagePicker, animated: true, completion: nil)
+    @IBAction func recordVideo(_ sender: UIBarButtonItem) {
+        MediaHelper.startMediaBrowser(delegate: self, sourceType: .camera)
+    }
+    
+    @IBAction func playVideo(_ sender: UIButton) {
+        let video = mediaStore.video(forKey: session.key)
+        let player = AVPlayer(url: video!.url)
+        let vcPlayer = AVPlayerViewController()
+        vcPlayer.player = player
+        self.present(vcPlayer, animated: true, completion: nil)
     }
     
     @IBAction func backgroundTapped(_ sender: Any) {
@@ -50,8 +50,8 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate, UINavi
         numberField.text = "\(session.numShotsMade)"
         
         let key = session.key
-        let imageToDisplay = mediaStore.image(forKey: key)
-        imageView.image = imageToDisplay
+        let videoSnapshotToDisplay = mediaStore.video(forKey: key)
+        imageView.image = videoSnapshotToDisplay?.snapshot
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -73,11 +73,59 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate, UINavi
         return true
     }
     
+    
     // MARK: - UIImagePickerControllerDelegate
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        mediaStore.setImage(image, forKey: session.key)
-        imageView.image = image
-        dismiss(animated: true, completion: nil)
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard
+            let mediaType = info[UIImagePickerControllerMediaType] as? String,
+            mediaType == (kUTTypeMovie as String),
+            let url = info[UIImagePickerControllerMediaURL] as? URL,
+            UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(url.path)
+            else {
+                return
+        }
+        
+        let videoSnapshot = getVideoSnapshot(fromVideoLocation: url)
+        
+        mediaStore.setVideo(by: videoSnapshot!, url: url, forKey: session.key)
+        imageView.image = videoSnapshot
+    
+        dismiss(animated: true, completion: {
+            let player = AVPlayer(url: url)
+            let vcPlayer = AVPlayerViewController()
+            vcPlayer.player = player
+            self.present(vcPlayer, animated: true, completion: nil)
+        })
+
+        UISaveVideoAtPathToSavedPhotosAlbum(url.path, self, #selector(video(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    // MARK: - Helpers
+    @objc func getVideoSnapshot(fromVideoLocation url: URL) -> UIImage? {
+        let asset = AVURLAsset(url: url)
+        let generator = AVAssetImageGenerator(asset: asset)
+        generator.appliesPreferredTrackTransform = true
+        
+        let timestamp = CMTime(seconds: 0, preferredTimescale: 60)
+        
+        do {
+            let imageRef = try generator.copyCGImage(at: timestamp, actualTime: nil)
+            return UIImage(cgImage: imageRef)
+            
+        } catch let error as NSError {
+            print("Error: \(error)")
+            return nil
+        }
+    }
+
+    @objc func video(_ videoPath: String, didFinishSavingWithError error: Error?, contextInfo info: AnyObject) {
+        let title = (error == nil) ? "Success" : "Error"
+        let message = (error == nil) ? "Video was saved" : "Video failed to save"
+        print(message)
+
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+
+        present(alert, animated: true, completion: nil)
     }
 }

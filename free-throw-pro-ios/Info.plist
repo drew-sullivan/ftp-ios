@@ -24,6 +24,10 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>This app uses the camera to associate photos and videos with items</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app uses the microphone to associate sound with session recordings</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This app uses the photo library to store media you record in the app</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app uses the Photos Library to associate photos and videos with items</string>
 	<key>UILaunchStoryboardName</key>

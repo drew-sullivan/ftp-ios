@@ -77,7 +77,7 @@ class SessionsViewController: UITableViewController {
             let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {
                 (action) -> Void in
                     self.sessionsStore.removeSession(session)
-                    self.mediaStore.deleteImage(forKey: session.key)
+                    self.mediaStore.deleteVideo(forKey: session.key)
                     self.tableView.deleteRows(at: [indexPath], with: .automatic)
             })
             alert.addAction(deleteAction)

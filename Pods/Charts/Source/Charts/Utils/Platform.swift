@@ -189,14 +189,14 @@ types are aliased to either their UI* implementation (on iOS) or their NS* imple
 		UIGraphicsEndImageContext()
 	}
 
-	func NSUIImagePNGRepresentation(_ image: NSUIImage) -> Data?
+	func NSUIImagePNGRepresentation(_ video: NSUIImage) -> Data?
     {
-		return UIImagePNGRepresentation(image)
+		return UIImagePNGRepresentation(video)
 	}
 
-	func NSUIImageJPEGRepresentation(_ image: NSUIImage, _ quality: CGFloat = 0.8) -> Data?
+	func NSUIImageJPEGRepresentation(_ video: NSUIImage, _ quality: CGFloat = 0.8) -> Data?
     {
-		return UIImageJPEGRepresentation(image, quality)
+		return UIImageJPEGRepresentation(video, quality)
 	}
 
 	func NSUIMainScreen() -> NSUIScreen?

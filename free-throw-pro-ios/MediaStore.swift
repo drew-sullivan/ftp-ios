@@ -10,17 +10,18 @@ import UIKit
 
 class MediaStore {
     
-    let cache = NSCache<NSString, UIImage>()
+    let cache = NSCache<NSString, Video>()
     
-    func setImage(_ image: UIImage, forKey key: String) {
-        cache.setObject(image, forKey: key as NSString)
+    func setVideo(by snapshotImage: UIImage, url videoURL: URL, forKey key: String) {
+        let video = Video(snapshot: snapshotImage, url: videoURL)
+        cache.setObject(video, forKey: key as NSString)
     }
     
-    func image(forKey key: String) -> UIImage? {
+    func video(forKey key: String) -> Video? {
         return cache.object(forKey: key as NSString)
     }
     
-    func deleteImage(forKey key: String) {
+    func deleteVideo(forKey key: String) {
         cache.removeObject(forKey: key as NSString)
     }
 }

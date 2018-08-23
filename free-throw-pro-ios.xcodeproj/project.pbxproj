@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A99E0BB212E4BCF004CAD46 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A99E0BA212E4BCF004CAD46 /* Video.swift */; };
 		3AC747A821225031001E674A /* NewSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC747A721225031001E674A /* NewSessionController.swift */; };
 		3AC747AA21226F27001E674A /* SessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC747A921226F27001E674A /* SessionsViewController.swift */; };
 		3AC747AC21226FEF001E674A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC747AB21226FEF001E674A /* Session.swift */; };
@@ -14,7 +15,6 @@
 		7C07BAB421247F1F001EEFAD /* SessionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C07BAB321247F1F001EEFAD /* SessionDetailViewController.swift */; };
 		7C07BAB621248165001EEFAD /* ObjectFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C07BAB521248165001EEFAD /* ObjectFormatter.swift */; };
 		7C07BABA212B170B001EEFAD /* MediaStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C07BAB9212B170B001EEFAD /* MediaStore.swift */; };
-		7C07BABC212B1C76001EEFAD /* RecordVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C07BABB212B1C76001EEFAD /* RecordVideoViewController.swift */; };
 		7C07BABE212B1DE6001EEFAD /* MediaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C07BABD212B1DE6001EEFAD /* MediaHelper.swift */; };
 		7CBE6A2D212374090066E282 /* SessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBE6A2C212374090066E282 /* SessionCell.swift */; };
 		7CF56E3A2121DF6700115894 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56E392121DF6700115894 /* AppDelegate.swift */; };
@@ -49,6 +49,7 @@
 /* Begin PBXFileReference section */
 		10FB29A02CE93BE0B6C1535C /* Pods_free_throw_pro_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_free_throw_pro_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12EB70E18F809635E81BB72C /* Pods_free_throw_pro_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_free_throw_pro_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A99E0BA212E4BCF004CAD46 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		3AC747A721225031001E674A /* NewSessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSessionController.swift; sourceTree = "<group>"; };
 		3AC747A921226F27001E674A /* SessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsViewController.swift; sourceTree = "<group>"; };
 		3AC747AB21226FEF001E674A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		7C07BAB321247F1F001EEFAD /* SessionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailViewController.swift; sourceTree = "<group>"; };
 		7C07BAB521248165001EEFAD /* ObjectFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectFormatter.swift; sourceTree = "<group>"; };
 		7C07BAB9212B170B001EEFAD /* MediaStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaStore.swift; sourceTree = "<group>"; };
-		7C07BABB212B1C76001EEFAD /* RecordVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVideoViewController.swift; sourceTree = "<group>"; };
 		7C07BABD212B1DE6001EEFAD /* MediaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaHelper.swift; sourceTree = "<group>"; };
 		7CBE6A2C212374090066E282 /* SessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCell.swift; sourceTree = "<group>"; };
 		7CF56E362121DF6700115894 /* free-throw-pro-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "free-throw-pro-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,21 +133,21 @@
 				7CF56E452121DF6800115894 /* Info.plist */,
 				7CF56E692121E0C400115894 /* AccountViewController.swift */,
 				7CF56E392121DF6700115894 /* AppDelegate.swift */,
+				7C07BABD212B1DE6001EEFAD /* MediaHelper.swift */,
+				7C07BAB9212B170B001EEFAD /* MediaStore.swift */,
+				3A99E0BA212E4BCF004CAD46 /* Video.swift */,
 				3AC747A721225031001E674A /* NewSessionController.swift */,
 				7C07BAB521248165001EEFAD /* ObjectFormatter.swift */,
 				7CF56E672121E0A800115894 /* ProgressViewController.swift */,
 				3AC747AB21226FEF001E674A /* Session.swift */,
 				7CBE6A2C212374090066E282 /* SessionCell.swift */,
 				7C07BAB321247F1F001EEFAD /* SessionDetailViewController.swift */,
-				7C07BABB212B1C76001EEFAD /* RecordVideoViewController.swift */,
-				7C07BABD212B1DE6001EEFAD /* MediaHelper.swift */,
 				3AC747AD21227296001E674A /* SessionStore.swift */,
 				3AC747A921226F27001E674A /* SessionsViewController.swift */,
 				7CF56E6B2121E0E500115894 /* ShareViewController.swift */,
 				7CF56E402121DF6800115894 /* Assets.xcassets */,
 				7CF56E422121DF6800115894 /* LaunchScreen.storyboard */,
 				7CF56E3D2121DF6700115894 /* Main.storyboard */,
-				7C07BAB9212B170B001EEFAD /* MediaStore.swift */,
 			);
 			path = "free-throw-pro-ios";
 			sourceTree = "<group>";
@@ -362,11 +362,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C07BABA212B170B001EEFAD /* MediaStore.swift in Sources */,
-				7C07BABC212B1C76001EEFAD /* RecordVideoViewController.swift in Sources */,
 				7CF56E682121E0A800115894 /* ProgressViewController.swift in Sources */,
 				3AC747A821225031001E674A /* NewSessionController.swift in Sources */,
 				3AC747AA21226F27001E674A /* SessionsViewController.swift in Sources */,
 				7C07BAB621248165001EEFAD /* ObjectFormatter.swift in Sources */,
+				3A99E0BB212E4BCF004CAD46 /* Video.swift in Sources */,
 				3AC747AC21226FEF001E674A /* Session.swift in Sources */,
 				3AC747AE21227296001E674A /* SessionStore.swift in Sources */,
 				7CBE6A2D212374090066E282 /* SessionCell.swift in Sources */,
