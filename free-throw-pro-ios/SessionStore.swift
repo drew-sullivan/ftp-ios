@@ -11,6 +11,11 @@ import UIKit
 class SessionStore {
     
     var allSessions = [Session]()
+    let sessionArchiveURL: URL = {
+        let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectory = documentsDirectories.first!
+        return documentDirectory.appendingPathComponent("sessions.archive")
+    }()
     
     init() {
         for _ in 0..<5 {
@@ -38,5 +43,11 @@ class SessionStore {
         let movedItem = allSessions[fromIndex]
         allSessions.remove(at: fromIndex)
         allSessions.insert(movedItem, at: toIndex)
+    }
+    
+    // MARK: - Archive
+    func saveChanges() -> Bool {
+        print("Saving sessions to: \(sessionArchiveURL.path)")
+        return NSKeyedArchiver.archiveRootObject(allSessions, toFile: sessionArchiveURL.path)
     }
 }

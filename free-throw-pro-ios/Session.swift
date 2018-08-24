@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Session: NSObject {
+class Session: NSObject, NSCoding {
     var key: String
     var num: Int
     var date: Date
@@ -30,5 +30,22 @@ class Session: NSObject {
         } else {
             self.init(num: num, date: Date(), numShotsMade: 8)
         }
+    }
+    
+    // MARK: - Archiving
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(key, forKey: "key")
+        aCoder.encode(num, forKey: "num")
+        aCoder.encode(date, forKey: "date")
+        aCoder.encode(numShotsMade, forKey: "numShotsMade")
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        key = aDecoder.decodeObject(forKey: "key") as! String
+        num = aDecoder.decodeObject(forKey: "num") as! Int
+        date = aDecoder.decodeObject(forKey: "date") as! Date
+        numShotsMade = aDecoder.decodeObject(forKey: "numShotsMade") as! Int
+        
+        super.init()
     }
 }
