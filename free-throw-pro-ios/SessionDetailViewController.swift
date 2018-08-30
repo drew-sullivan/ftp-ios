@@ -22,8 +22,9 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate, UINavi
     }
     
     @IBAction func playVideo(_ sender: UIButton) {
-        let video = mediaStore.video(forKey: session.key)
-        let player = AVPlayer(url: video!.url)
+        let videoInfo = mediaStore.video(forKey: session.key)
+        let url = videoInfo?.videoURL
+        let player = AVPlayer(url: url!)
         let vcPlayer = AVPlayerViewController()
         vcPlayer.player = player
         self.present(vcPlayer, animated: true, completion: nil)
@@ -50,8 +51,9 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate, UINavi
         numberField.text = "\(session.numShotsMade)"
         
         let key = session.key
-        let videoSnapshotToDisplay = mediaStore.video(forKey: key)
-        imageView.image = videoSnapshotToDisplay?.snapshot
+        let videoData = mediaStore.video(forKey: key)
+        let videoSnapshotToDisplay = getVideoSnapshot(fromVideoLocation: videoData!.videoURL!)
+        imageView.image = videoSnapshotToDisplay
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -80,6 +82,7 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate, UINavi
             let mediaType = info[UIImagePickerControllerMediaType] as? String,
             mediaType == (kUTTypeMovie as String),
             let url = info[UIImagePickerControllerMediaURL] as? URL,
+            let videoData = NSData(contentsOf: url),
             UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(url.path)
             else {
                 return
@@ -87,7 +90,9 @@ class SessionDetailViewController: UIViewController, UITextFieldDelegate, UINavi
         
         let videoSnapshot = getVideoSnapshot(fromVideoLocation: url)
         
-        mediaStore.setVideo(by: videoSnapshot!, url: url, forKey: session.key)
+        self.dismiss(animated: true, completion: nil)
+        
+        mediaStore.setVideo(videoData: videoData, forKey: session.key)
         imageView.image = videoSnapshot
     
         dismiss(animated: true, completion: {

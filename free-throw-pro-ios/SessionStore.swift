@@ -21,6 +21,10 @@ class SessionStore {
         for _ in 0..<5 {
             createSession()
         }
+
+//        if let archivedSessions = NSKeyedUnarchiver.unarchiveObject(withFile: sessionArchiveURL.path) as? [Session] {
+//            allSessions = archivedSessions
+//        }
     }
     
     @discardableResult func createSession() -> Session {
